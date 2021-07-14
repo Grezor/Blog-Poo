@@ -1,2 +1,5 @@
-<h1>Single</h1>
-<a href="index.php?p=home">Home</a>
+<?php 
+$post = $db->prepare('SELECT * FROM articles WHERE id = :id', [":id" => $_GET['id']], 'App\Table\Article', true);
+?>
+<h1><?= $post->titre ?></h1>
+<p><?= $post->contenu ?></p>
